@@ -25,7 +25,7 @@ def getLinks(url, headers):
 def printArticles(url, headers):
     articleTitle = connect(url, headers).find(itemprop="headline").get_text().encode('utf-8').strip()
     articleText = connect(url, headers).find(itemprop="articleBody")
-    print
+    
     return articleTitle+ \
            '\n --------------------' +\
            '\n' + articleText.get_text().encode('utf-8').strip()
